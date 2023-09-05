@@ -1,0 +1,20 @@
+services:
+  db:
+    image: "postgres"
+    environment:
+      POSTGRES_PASSWORD: "mysecretpassword"
+  backend:
+    build: .
+    ports:
+     - "7245:80"
+    environment:
+      CONNECTION_STRING: "User ID=postgres;Password=mysecretpassword;Host=db;Port=5432;Database=initdb;"
+    restart: always
+    depends_on:
+     - db
+  frontend:
+    build: ./EmployeesManager/ClientApp
+    ports:
+     - "7246:3000"
+    environment:
+      REACT_APP_PROXY_HOST: "http://backend:80"
