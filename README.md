@@ -5,13 +5,13 @@
 2. Увольнять сотрудников и назначать новых на их место;
 3. Просматривать всех сотрудников посредством удобного графического интерфейса.
 
-## Если у вас есть Docker Compose:
+## Если у вас есть Docker Compose
 1. Открыть консоль в папке с решением.
 2. docker compose up
 
-## Если у вас нет Docker или Docker Compose:
+## Если у вас нет Docker или Docker Compose
 
-### Start Backend:
+### Start Backend
 
 1. Открыть консоль в папке с решением.
 2. dotnet restore
@@ -21,13 +21,13 @@
 5. cd .\app\
 6. .\EmployeesManager.exe
 
-### Start Frontend:
+### Start Frontend
 
 1. cd .\EmployeesManager\ClientApp\
 2. (Optional) $Env:REACT_APP_PROXY_HOST="http://localhost:5000"
 3. npm start
 
-## Generate Data:
+## Generate Data
 1. cd .\EmployeesManager\Scripts\
 2. pip install -r requirements.txt
 3. python generate_database.py
